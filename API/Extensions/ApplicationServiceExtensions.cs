@@ -16,10 +16,6 @@ namespace API.Extensions
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<LogUserActivity>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
-            services.AddDbContext<DataContext>(options => 
-            {
-                options.UseSqlite(config.GetConnectionString("DefaultConnection"));
-            });
             services.AddSingleton<PresenceTracker>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
